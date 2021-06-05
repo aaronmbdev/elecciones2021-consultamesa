@@ -1,10 +1,53 @@
 
 import './App.css';
 import {Component} from "react";
-import {ReCAPTCHA} from "react-google-recaptcha";
 
 class App extends Component{
-  render() {
+    constructor(props) {
+        super(props);
+        this.state = {
+            isLoaded: false,
+            dni: null,
+            guess: null
+        };
+        this.handleGuessChange = this.handleGuessChange.bind(this);
+        this.handleDNIChange = this.handleDNIChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleDNIChange(e) {
+        this.setState({
+            dni: e.target.value
+        });
+    }
+    handleGuessChange(e) {
+        this.setState({
+            guess: e.target.value
+        });
+    }
+    genRandomNumber() {
+        const min = 1;
+        const max = 5;
+        return min + Math.random() * (max - min);
+    }
+
+    handleSubmit() {
+        let {num1,num2,guess} = this.state;
+        guess = parseInt(guess);
+        if((num1+num2) === guess) {
+
+        } else {
+            console.log("SUMA MAL");
+        }
+    }
+    componentDidMount() {
+        this.setState({
+            isLoaded: true,
+            num1: Math.round(this.genRandomNumber()),
+            num2: Math.round(this.genRandomNumber())
+        });
+    }
+
+    render() {
       return (
           <div className="account-pages my-5 pt-5">
               <div className={"container"}>
@@ -28,18 +71,16 @@ class App extends Component{
                                                   <div className="form-group mb-4">
                                                       <label htmlFor="dni">DNI</label>
                                                       <input type="text" name="dni" className="form-control" id="dni"
-                                                             placeholder="0 0 0 0 0 0 0 0"/>
+                                                             placeholder="0 0 0 0 0 0 0 0" onChange={this.handleDNIChange}/>
                                                   </div>
-                                                  <input type="hidden" name="randcheck" value="946965137"/>
-                                                  <ReCAPTCHA
-                                                      sitekey="6Ld55YsaAAAAAPbGCSbd1VHPb9D6aJ6MI1Zrl8qT"
-                                                      onChange={() => {
-
-                                                      }}
-                                                  />
+                                                  <div className="form-group mb-4">
+                                                      <label htmlFor="dni">¿Cuánto es {this.state.num1} + {this.state.num2}?</label>
+                                                      <input type="text" name="dni" className="form-control" id="dni"
+                                                             placeholder="" onChange={this.handleGuessChange}/>
+                                                  </div>
                                                   <div className="mt-4">
                                                       <button className="btn btn-primary btn-block waves-effect waves-light"
-                                                              type="submit">Consultar mesa
+                                                              type="button" onClick={this.handleSubmit}>Consultar mesa
                                                       </button>
                                                   </div>
 
