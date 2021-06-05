@@ -1,0 +1,28 @@
+.btn-primary {
+  color: #fff;
+  background-color: #b82f2f;
+  border-color: #b82f2f;
+}
+.bg-primary {
+  background-color: #b82f2f!important;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #540b0e!important;
+  border-color: #540b0e!important;
+}
+.btn-primary:active {
+  color: #fff;
+  background-color: #540b0e!important;
+  border-color: #540b0e!important;
+}
+.btn-primary:focus {
+  color: #fff;
+  background-color: #540b0e!important;
+  border-color: #540b0e!important;
+}
+
+body {
+  font-family: Rubik,sans-serif;
+  color: #495057
+}
