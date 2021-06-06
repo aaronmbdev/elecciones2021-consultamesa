@@ -21,10 +21,7 @@ class App extends Component{
                 NOMBRE: "",
                 MM: false
             },
-            class: '',
-            showMap: false,
-            mesaX: 0,
-            mesaY: 0
+            class: ''
         };
         this.handleDNIChange = this.handleDNIChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -32,18 +29,6 @@ class App extends Component{
         this.hideModal = this.hideModal.bind(this);
         this.showError = this.showError.bind(this);
         this.hideError = this.hideError.bind(this);
-        this.hideMap = this.hideMap.bind(this);
-        this.showMap = this.showMap.bind(this);
-    }
-    showMap() {
-        this.setState({
-            showMap: true
-        });
-    }
-    hideMap() {
-        this.setState({
-            showMap: false
-        });
     }
     showError() {
         this.setState({
@@ -101,18 +86,6 @@ class App extends Component{
     }
 
     render() {
-        const getMap= () => {
-            return {
-                name: "Mesa",
-                areas: [
-                    {
-                        name: "mesa",
-                        shape: "circle",
-                        coords: [this.state.mesax,this.state.mesay]
-                    }
-                ]
-            };
-        }
         const renderMM = (render) => {
             if(render) {
                 return(<div className="col-md-12 margin">
