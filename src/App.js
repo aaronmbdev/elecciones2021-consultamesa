@@ -78,7 +78,7 @@ class App extends Component{
             } else {
                 toast.error("No se ha podido conectar con el servidor");
             }
-        }).catch((e) => {
+        }).catch(() => {
             toast.error("No se ha podido conectar con el servidor");
         });
     }
@@ -113,15 +113,15 @@ class App extends Component{
                         </ul>
                         <p>Te recordamos que la asistencia a las capacitaciones que organiza la ONPE es vital.
                             Podrás encontrar toda la información necesaria en la página web de la
-                            ONPE&nbsp;(<a
+                            ONPE (<a
                                 href="https://www.onpe.gob.pe/modElecciones/elecciones/2021/SEP/miembro-de-mesa.html?utm_source=sendinblue&amp;utm_campaign=EG_-_2021_-_MIembros_de_Mesa_Barcelona_2da_Vuelta&amp;utm_medium=email"
-                                target="_blank">ingresando aquí</a>).</p>
+                                target="_blank" rel={"noreferrer"}>ingresando aquí</a>).</p>
 
                         <p>A fin de que podamos llevar un registro ordenado de l@s miembros de mesa que nos
                             acompañarán, te pedimos –por favor– completes algunos datos de confirmación (solo
-                            te tomará un minuto).&nbsp;<a
+                            te tomará un minuto). <a
                                 href="https://forms.office.com/pages/responsepage.aspx?id=w66okETgUky0kJNiGrWua3Obt1FRXpNAkyrFDQ251p5UMUdQMDhRVVlPWkhURk5CMDk3SEo5VTE2OC4u&amp;utm_source=sendinblue&amp;%253butm_campaign=EG_-_2021_-_MIembros_de_Mesa_Barcelona_2da_Vuelta&amp;%253butm_medium=email"
-                                target="_blank">Ingresa al formulario aquí.</a></p>
+                                target="_blank" rel={"noreferrer"}>Ingresa al formulario aquí.</a></p>
                         <p>Desde ya te agradecemos por el compromiso y la dedicación con este proceso
                             electoral.</p>
                     </div>
@@ -265,7 +265,7 @@ class App extends Component{
                           </div>
                       </ModalBody>
                       <ModalFooter>
-                          <a href={"https://elecciones.consulperubarcelona.com/assets/mapa.pdf"} target={"_blank"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
+                          <a href={"https://elecciones.consulperubarcelona.com/assets/mapa.pdf"} target={"_blank"} rel={"noreferrer"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
                           <button className={"btn btn-secondary btn-block waves-effect waves-light"} onClick={this.hideModal}>Cerrar</button>
                       </ModalFooter>
                   </Modal>
@@ -288,7 +288,7 @@ class App extends Component{
                                       </ul>
                                       <p>Para más información, visita el portal web de la ONPE: <a
                                           href="https://www.consultamiembrodemesa.eleccionesgenerales2021.pe/#/"
-                                          target="_blank">https://www.consultamiembrodemesa.eleccionesgenerales2021.pe/</a>
+                                          target="_blank" rel={"noreferrer"}>https://www.consultamiembrodemesa.eleccionesgenerales2021.pe/</a>
                                       </p>
 
                                   </div>
