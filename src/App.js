@@ -6,7 +6,6 @@ import  axios from "axios";
 import {toast, ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ModalHeader from "react-bootstrap/ModalHeader";
-import ImageMapper from "react-image-mapper";
 
 class App extends Component{
     constructor(props) {
