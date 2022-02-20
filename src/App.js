@@ -262,7 +262,7 @@ class App extends Component{
                           </div>
                       </ModalBody>
                       <ModalFooter>
-                          <a href={"#"} target={"_blank"} rel={"noreferrer"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
+                          <a href={"http://google.com"} target={"_blank"} rel={"noreferrer"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
                           <button className={"btn btn-secondary btn-block waves-effect waves-light"} onClick={this.hideModal}>Cerrar</button>
                       </ModalFooter>
                   </Modal>
