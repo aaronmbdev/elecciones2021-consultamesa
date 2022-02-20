@@ -2,8 +2,7 @@
 import './App.css';
 import {Component} from "react";
 import {Modal, ModalBody, ModalFooter} from "react-bootstrap";
-import  axios from "axios";
-import {toast, ToastContainer} from "react-toastify";
+import {ToastContainer} from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import ModalHeader from "react-bootstrap/ModalHeader";
 
@@ -61,7 +60,19 @@ class App extends Component{
         let dni = this.state.dni;
         let params = new URLSearchParams();
         params.append("dni",dni);
-        axios.post("https://elecciones.consulperubarcelona.com/api/getUserData",params).then((e) => {
+
+        this.setState({
+            show: true,
+            userData: {
+                DNI: "123456789",
+                MESA: "125",
+                NOMBRE: "Usuario de prueba",
+                MM: false
+            },
+            class: "AZUL"
+        });
+
+        /*axios.post("https://elecciones.consulperubarcelona.com/api/getUserData",params).then((e) => {
             if(e.status === 200) {
                 let info = e.data;
                 if(info !== false) {
@@ -80,9 +91,8 @@ class App extends Component{
             }
         }).catch(() => {
             toast.error("No se ha podido conectar con el servidor");
-        });
-    }
-    componentDidMount() {
+        });*/
+
     }
 
     render() {
@@ -170,20 +180,7 @@ class App extends Component{
           <div className="account-pages my-5 pt-5">
               <ToastContainer />
               <div className={"container"}>
-                  <div className={"row"}>
-                      <div className={"col-lg-12"}>
-                          <div className={"text-center mb-5"}>
-                              <img src="https://elecciones.consulperubarcelona.com/assets/images/segunda.png" height="70" alt="logo"/>
-                          </div>
-                      </div>
-                  </div>
-                  <div className={"row"}>
-                      <div className={"col-lg-12"}>
-                          <div className={"text-center mb-5"}>
-                              <img src="https://elecciones.consulperubarcelona.com/assets/images/logo-light.png" height="70" alt="logo"/>
-                          </div>
-                      </div>
-                  </div>
+                  
                   <div className={"row justify-content-center"}>
                       <div className={"col-lg-5"}>
                           <div className={"card"}>
@@ -265,7 +262,7 @@ class App extends Component{
                           </div>
                       </ModalBody>
                       <ModalFooter>
-                          <a href={"https://elecciones.consulperubarcelona.com/assets/mapa.pdf"} target={"_blank"} rel={"noreferrer"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
+                          <a href={"#"} target={"_blank"} rel={"noreferrer"}><button className={"btn btn-primary btn-block waves-effect waves-light"}>Ver mapa</button></a>
                           <button className={"btn btn-secondary btn-block waves-effect waves-light"} onClick={this.hideModal}>Cerrar</button>
                       </ModalFooter>
                   </Modal>
